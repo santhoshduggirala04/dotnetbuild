@@ -51,3 +51,12 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop' # Name the artifact (e.g., 'drop' or 'HelloWorldApp')
+
+
+- task: DotNetCoreCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(1)(3a9124b4-d3f0-4aaa-84ab-55ee8de95735)'
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    nobuild: true
+    versioningScheme: 'off'
